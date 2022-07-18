@@ -2,98 +2,64 @@ import Link from 'next/link';
 import Image from 'next/future/image';
 
 import Container from 'components/Container';
-import avatar from 'public/avatar.jpg';
-import avatarBW from 'public/avatar-bw.jpg';
 
 export default function About() {
   return (
     <Container title="About – Lee Robinson">
       <div className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16 w-full">
         <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
-          About Me
+          /about
         </h1>
-        <div className="mb-8 prose dark:prose-dark leading-6">
-          <h2>Links</h2>
-          <ul>
-            <li>
-              Twitter: <a href="https://twitter.com/leeerob">@leeerob</a>
-            </li>
-            <li>
-              GitHub: <a href="https://github.com/leerob">@leerob</a>
-            </li>
-            <li>
-              Website:{' '}
-              <Link href="https://leerob.io">
-                <a>https://leerob.io</a>
-              </Link>
-            </li>
-            <li>
-              LinkedIn:{' '}
-              <a href="https://www.linkedin.com/in/leeerob/">
-                https://www.linkedin.com/in/leeerob
-              </a>
-            </li>
-          </ul>
-          <h2>Bio</h2>
-          <h3>Job Title</h3>
-          <p>Lee Robinson, VP of Developer Experience at Vercel</p>
-          <h3>Long, 3rd Person</h3>
-          <p>
-            Lee Robinson is the VP of Developer Experience at{' '}
-            <a href="http://vercel.com/">Vercel</a>, where he helps developers
-            build a faster web and leads the Next.js community. He leads the
-            community for the React framework Next.js and is an open-source
-            contributor. An educator, writer, and speaker, Lee has created
-            courses on React, Next.js, and web development.
-          </p>
-          <h3>Long, 1st Person</h3>
-          <p>
-            Hey, I'm Lee. I'm the VP of Developer Experience at{' '}
-            <a href="https://vercel.com/">Vercel</a>, where my team helps
-            developers build a faster web. I'm a Next.js contributor and help
-            lead our open-source communities. I've passionate about frontend
-            development and have created courses on React, Next.js, and web
-            development. I'm an advisor and investor in early stage startups.
-          </p>
-          <h3>Short, 3rd Person</h3>
-          <p>
-            Lee Robinson is the VP of Developer Experience at{' '}
-            <a href="http://vercel.com/">Vercel</a>, where he helps developers
-            build a faster web.
-          </p>
-          <h3>Short, 1st Person</h3>
-          <p>
-            Hey, I'm Lee. I'm the VP of Developer Experience at{' '}
-            <a href="https://vercel.com/">Vercel</a>, where my team helps
-            developers build a faster web.
-          </p>
-          <h3>Education</h3>
-          <p>
-            Lee Robinson graduated from Iowa State University with a B.S. in
-            Computer Engineering.
-          </p>
-          <h2>Headshots</h2>
-          <div className="flex space-x-8">
-            <a href="/avatar.jpg">
-              <Image
-                alt="Lee Robinson headshot"
-                width={400}
-                quality={100}
-                src={avatar}
-                className="rounded-md"
-              />
+        <p className="text-black dark:text-white mb-4">
+          My name is Ryan Carmody and I am from{' '}
+          <a
+            href="https://en.wikipedia.org/wiki/Adelaide"
+            target="blank"
+            rel="noopener noreferrer"
+          >
+            Adelaide, South Australia
+          </a>
+        </p>
+        <p className="text-black dark:text-white mb-4">
+          For about 2 years, I worked full-time for a local company as a web
+          developer, mainly using Angular 2+. I love coding but hate working in
+          an office for 40 hours a week. Deep down, I was pretty unhappy and I
+          was losing my passion for coding and creating things. It felt like I
+          was using up all of my problem-solving abilities and creativity at
+          work.
+        </p>
+        <p className="text-black dark:text-white mb-6">
+          In early 2022, I quit my job and took a job tutoring at my local
+          university. I can now say, I seriously LOVE tutoring. I really enjoy
+          building meaningful relationships with students and seeing them
+          develop their coding skills. Also, since I started tutoring, I have
+          really regained my passion for coding and creating things. I have
+          started building things again and am learning new tech such as
+          next.js.
+        </p>
+        <h2 className="text-black dark:text-white mb-4">Get in contact</h2>
+        <ul>
+          <li>
+            {'>  '}
+            <a
+              href="https://www.linkedin.com/in/ryanjcarmody/"
+              target="blank"
+              rel="noopener noreferrer"
+            >
+              LinkedIn
             </a>
-            <a href="/avatar-bw.jpg">
-              <Image
-                alt="Lee Robinson headshot"
-                width={400}
-                quality={100}
-                src={avatarBW}
-                className="rounded-md"
-              />
+          </li>
+          <li>
+            {'>  '}
+            <a
+              href="mailto:ryancarmody1@gmail.com"
+              target="blank"
+              rel="noopener noreferrer"
+            >
+              Email
             </a>
-          </div>
-        </div>
+          </li>
+        </ul>
       </div>
     </Container>
   );

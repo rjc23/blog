@@ -1,5 +1,10 @@
-import { sanityClient } from 'lib/sanity-server';
-import { postSlugsQuery } from 'lib/queries';
+import { ApolloClient, InMemoryCache } from "@apollo/client";
+import { GET_ALL_SLUGS, GET_INDIVIDUAL_POST } from 'graphql/queries';
+ 
+const client = new ApolloClient({
+  uri: process.env.CMS_HOST,
+  cache: new InMemoryCache(),
+});
 
 const createSitemap = (slugs) => `<?xml version="1.0" encoding="UTF-8"?>
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -7,7 +12,7 @@ const createSitemap = (slugs) => `<?xml version="1.0" encoding="UTF-8"?>
           .map((slug) => {
             return `
                 <url>
-                    <loc>${`https://leerob.io/${slug}`}</loc>
+                    <loc>${`https://ryancarmody.dev/${slug}`}</loc>
                 </url>
             `;
           })
@@ -15,18 +20,13 @@ const createSitemap = (slugs) => `<?xml version="1.0" encoding="UTF-8"?>
     </urlset>
 `;
 export async function getServerSideProps({ res }) {
-  const allPosts = await sanityClient.fetch(postSlugsQuery);
+  const { data } = await client.query({ query: GET_ALL_SLUGS });
   const allPages = [
-    ...allPosts.map((slug) => `blog/${slug}`),
+    ...data.blogPosts.data.map((slug: any) => `blog/${slug.attributes.urlSlug}`),
     ...[
       '',
       'about',
-      'blog',
-      'dashboard',
-      'guestbook',
-      'newsletter',
-      'tweets',
-      'uses'
+      'blog'
     ]
   ];
 

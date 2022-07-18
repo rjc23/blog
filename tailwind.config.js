@@ -21,7 +21,7 @@ module.exports = {
         }
       },
       fontFamily: {
-        sans: ['IBM Plex Sans', ...fontFamily.sans]
+        sans: ['PT Sans', ...fontFamily.sans]
       },
       typography: (theme) => ({
         DEFAULT: {
@@ -61,7 +61,8 @@ module.exports = {
             },
             'h2,h3,h4': {
               color: theme('colors.gray.100'),
-              'scroll-margin-top': spacing[32]
+              'scroll-margin-top': spacing[32],
+              fontFamily: 'PT Sans'
             },
             hr: { borderColor: theme('colors.gray.700') },
             ol: {

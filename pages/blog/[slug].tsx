@@ -1,27 +1,25 @@
 import { MDXRemote } from 'next-mdx-remote';
 import BlogLayout from 'layouts/blog';
-import Tweet from 'components/Tweet';
 import components from 'components/MDXComponents';
-import { postQuery, postSlugsQuery } from 'lib/queries';
-import { getTweets } from 'lib/twitter';
-import { sanityClient, getClient } from 'lib/sanity-server';
 import { mdxToHtml } from 'lib/mdx';
 import { Post } from 'lib/types';
+import { ApolloClient, InMemoryCache } from '@apollo/client';
+import { GET_ALL_SLUGS, GET_INDIVIDUAL_POST } from 'graphql/queries';
+
+const client = new ApolloClient({
+  uri: process.env.CMS_HOST,
+  cache: new InMemoryCache()
+});
 
 export default function PostPage({ post }: { post: Post }) {
-  const StaticTweet = ({ id }) => {
-    const tweet = post.tweets.find((tweet) => tweet.id === id);
-    return <Tweet {...tweet} />;
-  };
-
+  console.log(post.date);
   return (
     <BlogLayout post={post}>
       <MDXRemote
         {...post.content}
         components={
           {
-            ...components,
-            StaticTweet
+            ...components
           } as any
         }
       />
@@ -30,32 +28,34 @@ export default function PostPage({ post }: { post: Post }) {
 }
 
 export async function getStaticPaths() {
-  const paths = await sanityClient.fetch(postSlugsQuery);
+  const { data } = await client.query({ query: GET_ALL_SLUGS });
+  const paths = data.blogPosts.data.map((post) => {
+    return { params: { slug: post.attributes.urlSlug } };
+  });
+
   return {
-    paths: paths.map((slug) => ({ params: { slug } })),
-    fallback: 'blocking'
+    paths,
+    fallback: false
   };
 }
 
 export async function getStaticProps({ params, preview = false }) {
-  const { post } = await getClient(preview).fetch(postQuery, {
-    slug: params.slug
+  const { data } = await client.query({
+    query: GET_INDIVIDUAL_POST,
+    variables: { slugUrl: params.slug }
   });
 
-  if (!post) {
-    return { notFound: true };
-  }
-
-  const { html, tweetIDs, readingTime } = await mdxToHtml(post.content);
-  const tweets = await getTweets(tweetIDs);
+  const attrs = data.blogPosts.data[0].attributes;
+  const { html } = await mdxToHtml(attrs.content);
+  // console.log(attrs);
 
   return {
     props: {
       post: {
-        ...post,
+        heading: attrs.heading,
         content: html,
-        tweets,
-        readingTime
+        description: attrs.description,
+        date: attrs.createdAt
       }
     }
   };
