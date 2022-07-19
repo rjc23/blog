@@ -19,6 +19,7 @@ export default function About() {
           >
             Adelaide, South Australia
           </a>
+          .
         </p>
         <p className="text-black dark:text-white mb-4">
           For about 2 years, I worked full-time for a local company as a web

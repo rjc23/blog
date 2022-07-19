@@ -45,8 +45,7 @@ export async function getStaticProps({ params, preview = false }) {
   });
 
   const attrs = data.blogPosts.data[0].attributes;
-  const { html } = await mdxToHtml(attrs.content);
-  // console.log(attrs);
+  const { html, readingTime } = await mdxToHtml(attrs.content);
 
   return {
     props: {
@@ -54,7 +53,8 @@ export async function getStaticProps({ params, preview = false }) {
         heading: attrs.heading,
         content: html,
         description: attrs.description,
-        date: attrs.createdAt
+        date: attrs.createdAt,
+        readingTime: readingTime
       }
     }
   };

@@ -1,7 +1,14 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-export default function Author({}) {
+export default function Author({ readingTime, date }) {
+  const options: any = {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  };
+  const createdAt = new Date(date).toLocaleDateString([], options);
+
   return (
     <div className="flex justify-between w-full mb-12">
       <div>
@@ -17,7 +24,7 @@ export default function Author({}) {
             <div className="flex flex-col">
               <p>Ryan Carmody</p>
               <p className="text-sm text-green-600 dark:text-green-300">
-                2 mins · 14 July 2022
+                {readingTime} · {createdAt}
               </p>
             </div>
           </a>
