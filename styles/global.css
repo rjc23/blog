@@ -125,7 +125,7 @@ html {
 .token.constant,
 .token.symbol,
 .token.deleted {
-  @apply text-green-600;
+  @apply text-green-700;
 }
 
 .token.selector,

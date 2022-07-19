@@ -42,7 +42,7 @@ export default function Misc({ posts }) {
               >
                 <a>
                   <h3>{val.attributes.heading}</h3>
-                  <span className="text-sm text-green-600 dark:text-green-300">
+                  <span className="text-sm text-green-700 dark:text-green-300">
                     {val.attributes.minsToRead} mins - {createdAt}
                   </span>
                   <p>{val.attributes.description}</p>

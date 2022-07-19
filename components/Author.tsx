@@ -14,16 +14,18 @@ export default function Author({ readingTime, date }) {
       <div>
         <Link href="/about">
           <a className="flex gap-4 items-center">
-            <Image
-              src={'/avatar.png'}
-              width={45}
-              height={45}
-              alt="Image of Ryan, the Author"
-              className="rounded-full"
-            ></Image>
+            <div className="w-12 h-12">
+              <Image
+                src={'/avatar.png'}
+                width={80}
+                height={80}
+                alt="Image of Ryan, the Author"
+                className="rounded-full"
+              ></Image>
+            </div>
             <div className="flex flex-col">
               <p>Ryan Carmody</p>
-              <p className="text-sm text-green-600 dark:text-green-300">
+              <p className="text-sm text-green-700 dark:text-green-300">
                 {readingTime} · {createdAt}
               </p>
             </div>
@@ -32,7 +34,7 @@ export default function Author({ readingTime, date }) {
       </div>
       <div className="flex justify-center items-center">
         <Link href="https://www.linkedin.com/in/ryanjcarmody/">
-          <a target="_blank">
+          <a target="_blank" aria-label="Link to LinkedIn page">
             <div className="w-12 h-12 flex items-center justify-center">
               <svg
                 className="w-7 h-7 text-gray-600 hover:text-[#0072b1] dark:text-gray-400 dark:hover:text-[#0072b1] fill-current hover:scale-[1.05]"
@@ -46,8 +48,12 @@ export default function Author({ readingTime, date }) {
             </div>
           </a>
         </Link>
-        <Link href="https://github.com/rjc23">
-          <a target="_blank" className="hidden sm:block">
+        <Link href="https://twitter.com/ryancarmody_dev">
+          <a
+            target="_blank"
+            className="hidden sm:block"
+            aria-label="Link to Twitter page"
+          >
             <div className="w-12 h-12 flex items-center justify-center">
               <svg
                 className="w-7 h-7 text-gray-600 hover:text-[#1DA1F2] dark:text-gray-400 dark:hover:text-[#1DA1F2] fill-current hover:scale-[1.05]"
@@ -62,7 +68,7 @@ export default function Author({ readingTime, date }) {
           </a>
         </Link>
         <Link href="https://github.com/rjc23">
-          <a target="_blank">
+          <a target="_blank" aria-label="Link to GitHub page">
             <div className="w-12 h-12 flex items-center justify-center">
               <svg
                 className="w-7 h-7 text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white fill-current hover:scale-[1.05]"
