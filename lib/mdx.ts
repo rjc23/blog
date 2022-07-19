@@ -5,6 +5,7 @@ import rehypeSlug from 'rehype-slug';
 import rehypeCodeTitles from 'rehype-code-titles';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypePrism from 'rehype-prism-plus';
+import rehypeImgSize from "rehype-img-size";
 
 export async function mdxToHtml(source) {
   const mdxSource = await serialize(source, {
@@ -21,18 +22,15 @@ export async function mdxToHtml(source) {
               className: ['anchor']
             }
           }
-        ]
+        ],
+        [rehypeImgSize, { dir: "static" }]
       ],
       format: 'mdx'
     }
   });
 
-  const tweetMatches = source.match(/<StaticTweet\sid="[0-9]+"\s\/>/g);
-  const tweetIDs = tweetMatches?.map((tweet) => tweet.match(/[0-9]+/g)[0]);
-
   return {
     html: mdxSource,
-    tweetIDs: tweetIDs || [],
     wordCount: source.split(/\s+/gu).length,
     readingTime: readingTime(source).text
   };

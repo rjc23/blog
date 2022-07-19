@@ -5,11 +5,7 @@ module.exports = {
   swcMinify: true,
   reactStrictMode: true,
   images: {
-    domains: [
-      'i.scdn.co', // Spotify Album Art
-      'pbs.twimg.com', // Twitter Profile Picture
-      'cdn.sanity.io'
-    ]
+    domains: ['ryancarmody-blog.s3.amazonaws.com']
   },
   experimental: {
     legacyBrowsers: false,

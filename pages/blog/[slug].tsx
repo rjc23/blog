@@ -12,7 +12,6 @@ const client = new ApolloClient({
 });
 
 export default function PostPage({ post }: { post: Post }) {
-  console.log(post.date);
   return (
     <BlogLayout post={post}>
       <MDXRemote
