@@ -3,15 +3,7 @@ import ImageWithTheme from 'components/ImageWithTheme';
 import Image from 'next/future/image';
 
 const NextImage = (props) => {
-  return (
-    <Image
-      width={672}
-      height={400}
-      alt={props.alt}
-      src={props.src}
-      loading="lazy"
-    />
-  );
+  return <Image width={672} height={400} alt={props.alt} src={props.src} />;
 };
 
 const CustomLink = (props) => {
