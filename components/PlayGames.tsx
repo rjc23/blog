@@ -26,28 +26,24 @@ export default function PlayGames() {
   return (
     <div className="mt-16">
       <h3>Check out some of the games I made</h3>
-      <div className="flex gap-12">
-        <div className="mt-6 w-3/12">
-          <div className="">
-            <Game
-              link="https://playretrosnake.com"
-              alt="Retro Snake Game"
-              imgSrc="/snake.jpeg"
-            ></Game>
-          </div>
+      <div className="flex gap-3 flex-col sm:flex-row sm:gap-12">
+        <div className="mt-6 w-8/12 sm:w-3/12 ">
+          <Game
+            link="https://playretrosnake.com"
+            alt="Retro Snake Game"
+            imgSrc="/snake.jpeg"
+          ></Game>
           <div>
             <h4>Retro Snake</h4>
             <p>Eat the food but don’t hit the walls or your own body!</p>
           </div>
         </div>
-        <div className="mt-6 w-3/12">
-          <div className="">
-            <Game
-              link="https://playretrosnake.com"
-              alt="Retro Snake Game"
-              imgSrc="/world.png"
-            ></Game>
-          </div>
+        <div className="mt-6 w-8/12 sm:w-3/12 ">
+          <Game
+            link="https://playworldle.com"
+            alt="Retro Worldle"
+            imgSrc="/world.png"
+          ></Game>
           <div>
             <h4>Worldle</h4>
             <p>
