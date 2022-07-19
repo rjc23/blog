@@ -3,7 +3,7 @@
   "cleanUrls": true,
   "headers": [
     {
-      "source": "/fonts/ibm-plex-sans-var.woff2",
+      "source": "/fonts/PTSans-Bold.woff2",
       "headers": [
         {
           "key": "Cache-Control",
@@ -12,7 +12,7 @@
       ]
     },
     {
-      "source": "/fonts/ibm-plex-sans-var-italic.woff2",
+      "source": "/fonts/PTSans-Regular.woff2",
       "headers": [
         {
           "key": "Cache-Control",

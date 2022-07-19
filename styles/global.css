@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap');
-
 ::selection {
   background-color: #47a3f3;
   color: #fefefe;
@@ -233,6 +231,11 @@ h4 {
   font-size: 24px !important;
   @apply text-black font-bold dark:text-white;
 }
+
+ul, ol {
+  padding-left: 1em !important;
+}
+
 li {
   @apply text-black dark:text-white;
   margin-left: 1em;

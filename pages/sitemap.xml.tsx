@@ -1,9 +1,9 @@
-import { ApolloClient, InMemoryCache } from "@apollo/client";
+import { ApolloClient, InMemoryCache } from '@apollo/client';
 import { GET_ALL_SLUGS, GET_INDIVIDUAL_POST } from 'graphql/queries';
- 
+
 const client = new ApolloClient({
   uri: process.env.CMS_HOST,
-  cache: new InMemoryCache(),
+  cache: new InMemoryCache()
 });
 
 const createSitemap = (slugs) => `<?xml version="1.0" encoding="UTF-8"?>
@@ -22,12 +22,10 @@ const createSitemap = (slugs) => `<?xml version="1.0" encoding="UTF-8"?>
 export async function getServerSideProps({ res }) {
   const { data } = await client.query({ query: GET_ALL_SLUGS });
   const allPages = [
-    ...data.blogPosts.data.map((slug: any) => `blog/${slug.attributes.urlSlug}`),
-    ...[
-      '',
-      'about',
-      'blog'
-    ]
+    ...data.blogPosts.data.map(
+      (slug: any) => `blog/${slug.attributes.urlSlug}`
+    ),
+    ...['', 'about', 'blog', 'blog/code', 'blog/life', 'blog/misc']
   ];
 
   res.setHeader('Content-Type', 'text/xml');

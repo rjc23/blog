@@ -32,15 +32,14 @@ export default function Container(props) {
   const [mounted, setMounted] = useState(false);
   const { resolvedTheme, setTheme } = useTheme();
 
-  // After mounting, we have access to the theme
   useEffect(() => setMounted(true), []);
 
   const { children, ...customMeta } = props;
   const router = useRouter();
   const meta = {
     title: 'Ryan Carmody - Web Developer and Computer Science Tutor',
-    description: `Front-end developer, JavaScript enthusiast, and course creator.`,
-    image: 'https://leerob.io/static/images/lee-banner.png',
+    description: `Full stack web developer and computer science tutor. `,
+    image: '',
     type: 'website',
     ...customMeta
   };
