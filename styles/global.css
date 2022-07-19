@@ -62,7 +62,8 @@ html {
 }
 
 .prose a {
-  @apply transition-all;
+  @apply transition-all text-blue-800 dark:text-blue-400;
+
 }
 
 .prose .anchor:after {
@@ -250,5 +251,5 @@ li {
 }
 
 a {
-  @apply text-blue-500 hover:text-blue-700
+  @apply text-blue-700 hover:text-blue-700
 }

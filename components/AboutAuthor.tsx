@@ -27,10 +27,7 @@ export default function Author() {
           .
         </p>
         <p>
-          I web develop, rock climb, play wheelchair basketball and brew beer.{' '}
-          <Link href="/about">
-            <a>Learn more</a>
-          </Link>
+          I web develop, rock climb, play wheelchair basketball and brew beer.
         </p>
       </div>
     </div>
