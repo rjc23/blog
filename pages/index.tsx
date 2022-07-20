@@ -35,7 +35,7 @@ export default function Home() {
               />
             </div>
           </div>
-          <span className="h-16" />
+          <span className="h-24" />
         </div>
       </Container>
     </Suspense>
