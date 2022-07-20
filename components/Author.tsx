@@ -16,7 +16,7 @@ export default function Author({ readingTime, date }) {
           <a className="flex gap-4 items-center">
             <div className="relative w-12 h-12">
               <Image
-                src={'/avatar.png'}
+                src={'/me-100x100.png'}
                 layout="fill"
                 alt="Image of Ryan, the Author"
                 className="rounded-full grayscale"
