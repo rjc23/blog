@@ -148,7 +148,7 @@ html {
 .token.atrule,
 .token.attr-value,
 .token.keyword {
-  @apply text-blue-500;
+  @apply text-blue-700 dark:text-blue-500;
 }
 
 .token.function,

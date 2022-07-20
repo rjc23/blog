@@ -14,14 +14,13 @@ export default function Author({ readingTime, date }) {
       <div>
         <Link href="/about">
           <a className="flex gap-4 items-center">
-            <div>
-              {/* <Image
+            <div className="relative w-12 h-12">
+              <Image
                 src={'/avatar.png'}
-                width={80}
-                height={80}
+                layout="fill"
                 alt="Image of Ryan, the Author"
                 className="rounded-full grayscale"
-              ></Image> */}
+              ></Image>
             </div>
             <div className="flex flex-col">
               <p>Ryan Carmody</p>
