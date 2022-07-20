@@ -85,7 +85,7 @@ html {
 }
 
 .prose code {
-  @apply bg-gray-200 text-[#ec4899] dark:bg-gray-900 p-0.5 pl-1 pr-1 rounded-sm;
+  @apply bg-gray-200 text-black dark:bg-gray-200  p-0.5 pl-1 pr-1 rounded-sm;
 }
 
 .prose code::before {
@@ -125,7 +125,7 @@ html {
 .token.constant,
 .token.symbol,
 .token.deleted {
-  @apply text-green-700;
+  @apply text-green-700 dark:text-green-500;
 }
 
 .token.selector,
@@ -159,7 +159,7 @@ html {
 .token.regex,
 .token.important,
 .token.variable {
-  @apply text-yellow-500;
+  @apply text-yellow-700 dark:text-yellow-500;
 }
 
 code[class*='language-'],
