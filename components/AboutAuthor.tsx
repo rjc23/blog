@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export default function Author() {
   return (
-    <div className="flex items-start justify-start flex-col gap-4 mt-8 sm:flex-row sm:gap-8">
+    <div className="flex items-start justify-start flex-col gap-4 mt-8 sm:flex-row sm:gap-8 sm:items-center">
       <div className="w-20 sm:w-auto">
         <Image
           src={'/avatar.png'}
@@ -14,7 +14,12 @@ export default function Author() {
         ></Image>
       </div>
       <div>
-        <h3 className="">About the Author</h3>
+        <div className="flex items-center gap-2">
+          <h3>About the Author</h3>
+          <p className="bg-green-300 pl-2 pr-2 rounded-lg dark:text-black">
+            Open for work
+          </p>
+        </div>
         <p>
           Hi, I'm Ryan from{' '}
           <a
@@ -27,7 +32,8 @@ export default function Author() {
           .
         </p>
         <p>
-          I web develop, rock climb, play wheelchair basketball and brew beer.
+          I'm a web developer and computer science tutor. I also rock climb,
+          play wheelchair basketball and brew beer.
         </p>
       </div>
     </div>

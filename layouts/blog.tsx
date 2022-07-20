@@ -14,8 +14,9 @@ export default function BlogLayout({
     <Container
       title={`${post.heading} – Ryan Carmody`}
       description={post.description}
-      // image={urlForImage(post.coverImage).url()}
+      image={post.socialImage}
       date={post.date}
+      tags={post.tags}
       type="article"
     >
       <article className="flex flex-col items-start justify-center w-full max-w-2xl mx-auto mb-16">

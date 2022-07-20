@@ -2,6 +2,7 @@ import Container from 'components/Container';
 import { ApolloClient, InMemoryCache } from '@apollo/client';
 import { GET_LATEST_POSTS } from 'graphql/queries';
 import Link from 'next/link';
+import readingTime from 'reading-time';
 
 const client = new ApolloClient({
   uri: process.env.CMS_HOST,
@@ -41,7 +42,7 @@ export default function Code({ posts }) {
                   <a>
                     <h3>{val.attributes.heading}</h3>
                     <span className="text-sm text-green-700 dark:text-green-300">
-                      {val.attributes.minsToRead} mins - {createdAt}
+                      {readingTime(val.attributes.content).text} - {createdAt}
                     </span>
                     <p>{val.attributes.description}</p>
                   </a>

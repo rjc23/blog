@@ -54,6 +54,8 @@ export async function getStaticProps({ params, preview = false }) {
         content: html,
         description: attrs.description,
         date: attrs.createdAt,
+        socialImage: attrs.socialImage.data.attributes.url,
+        tags: attrs.tags,
         readingTime: readingTime
       }
     }

@@ -39,7 +39,6 @@ export default function Container(props) {
   const meta = {
     title: 'Ryan Carmody - Web Developer and Computer Science Tutor',
     description: `Full stack web developer and computer science tutor. `,
-    image: '',
     type: 'website',
     ...customMeta
   };
@@ -52,11 +51,11 @@ export default function Container(props) {
         <meta content={meta.description} name="description" />
         <meta
           property="og:url"
-          content={`https://ryancarmody.dev/${router.asPath}`}
+          content={`https://ryancarmody.dev${router.asPath}`}
         />
         <link
           rel="canonical"
-          href={`https://ryancarmody.dev/${router.asPath}`}
+          href={`https://ryancarmody.dev${router.asPath}`}
         />
         <meta property="og:type" content={meta.type} />
         <meta property="og:site_name" content="Ryan Carmody" />
@@ -68,6 +67,7 @@ export default function Container(props) {
         <meta name="twitter:title" content={meta.title} />
         <meta name="twitter:description" content={meta.description} />
         <meta name="twitter:image" content={meta.image} />
+        <meta name="keywords" content={meta.tags}></meta>
         {meta.date && (
           <meta property="article:published_time" content={meta.date} />
         )}

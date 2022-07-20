@@ -21,9 +21,6 @@ export default function Home() {
               <p className="text-gray-600 dark:text-gray-400 mb-16">
                 I don't like the 9-5 grind. Trying to make it on my own. Let's
                 see what happens.{' '}
-                <Link href="/about">
-                  <a>Learn more</a>
-                </Link>
               </p>
             </div>
             <div className="w-[80px] sm:w-[200px] relative mb-8 sm:mb-0 ">

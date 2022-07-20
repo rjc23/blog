@@ -2,6 +2,8 @@ import Container from 'components/Container';
 import { ApolloClient, InMemoryCache } from '@apollo/client';
 import { GET_LATEST_POSTS } from 'graphql/queries';
 import Link from 'next/link';
+import readingTime from 'reading-time';
+import { Key } from 'react';
 
 const client = new ApolloClient({
   uri: process.env.CMS_HOST,
@@ -25,7 +27,7 @@ export default function Misc({ posts }) {
         </p>
         <h2 className="mb-4">Latest articles</h2>
         <div>
-          {posts.map((val, i) => {
+          {posts.map((val: any, i: Key) => {
             const options: any = {
               year: 'numeric',
               month: 'long',
@@ -43,7 +45,7 @@ export default function Misc({ posts }) {
                 <a>
                   <h3>{val.attributes.heading}</h3>
                   <span className="text-sm text-green-700 dark:text-green-300">
-                    {val.attributes.minsToRead} mins - {createdAt}
+                    {readingTime(val.attributes.content).text} - {createdAt}
                   </span>
                   <p>{val.attributes.description}</p>
                 </a>

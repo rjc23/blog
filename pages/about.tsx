@@ -24,10 +24,9 @@ export default function About() {
         <p className="text-black dark:text-white mb-4">
           For about 2 years, I worked full-time for a local company as a web
           developer, mainly using Angular 2+. I love coding but hate working in
-          an office for 40 hours a week. Deep down, I was pretty unhappy and I
-          was losing my passion for coding and creating things. It felt like I
+          an office for 40 hours a week. I was pretty unhappy, it felt like I
           was using up all of my problem-solving abilities and creativity at
-          work.
+          work and my love for coding and creating was fading.
         </p>
         <p className="text-black dark:text-white mb-6">
           In early 2022, I quit my job and took a job tutoring at my local

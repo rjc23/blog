@@ -20,7 +20,6 @@ const GET_INDIVIDUAL_POST = gql`
           heading
           content
           createdAt
-          minsToRead
           description
           tags
           socialImage {
@@ -42,10 +41,10 @@ const GET_LATEST_POSTS = gql`
       data {
         attributes {
           heading
+          content
           description
           urlSlug
           createdAt
-          minsToRead
         }
       }
     }

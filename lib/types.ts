@@ -5,7 +5,8 @@ export type Post = {
   content: MDXRemoteSerializeResult;
   heading: string;
   date: any;
+  tags: any;
   description: string;
-  coverImage?: string;
+  socialImage: string;
   readingTime: string;
 };
