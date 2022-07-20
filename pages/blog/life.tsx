@@ -37,19 +37,17 @@ export default function Misc({ posts }) {
               val.attributes.createdAt
             ).toLocaleDateString([], options);
             return (
-              <Link
-                href={'/blog/' + val.attributes.urlSlug}
-                key={i}
-                className="mb-8"
-              >
-                <a>
-                  <h3>{val.attributes.heading}</h3>
-                  <span className="text-sm text-green-700 dark:text-green-300">
-                    {readingTime(val.attributes.content).text} - {createdAt}
-                  </span>
-                  <p>{val.attributes.description}</p>
-                </a>
-              </Link>
+              <div className="mb-8" key={i}>
+                <Link href={'/blog/' + val.attributes.urlSlug} className="mb-8">
+                  <a>
+                    <h3>{val.attributes.heading}</h3>
+                    <span className="text-sm text-green-700 dark:text-green-300">
+                      {readingTime(val.attributes.content).text} - {createdAt}
+                    </span>
+                    <p>{val.attributes.description}</p>
+                  </a>
+                </Link>
+              </div>
             );
           })}
         </div>
