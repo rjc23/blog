@@ -26,7 +26,7 @@ export default function Misc({ posts }) {
           apply for etc.
         </p>
         <h2 className="mb-4">Latest articles</h2>
-        <div>
+        <div className="flex flex-col-reverse">
           {posts.map((val: any, i: Key) => {
             const options: any = {
               year: 'numeric',

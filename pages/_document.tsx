@@ -38,6 +38,22 @@ export default function Document(props) {
           content="max-snippet:-1, max-image-preview:large, max-video-preview:-1"
           name="robots"
         />
+        <script
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_ANALYTICS}`}
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${process.env.GOOGLE_ANALYTICS}', {
+              page_path: window.location.pathname,
+            });
+          `
+          }}
+        />
       </Head>
       <body className="bg-white dark:bg-black text-white dark:text-black">
         <Main />

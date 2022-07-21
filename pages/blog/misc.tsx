@@ -23,7 +23,7 @@ export default function Misc({ posts }) {
           Had a random thought about something, wrote about it here.
         </p>
         <h2 className="mb-4">Latest articles</h2>
-        <div>
+        <div className="flex flex-col-reverse">
           {posts.map((val, i) => {
             const options: any = {
               year: 'numeric',
