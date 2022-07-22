@@ -152,7 +152,8 @@ html {
 }
 
 .token.function,
-.token.class-name {
+.token.class-name,
+.token.maybe-class-name {
   @apply text-pink-500;
 }
 

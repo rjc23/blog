@@ -43,14 +43,7 @@ export default function Document(props) {
           async
           src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_ANALYTICS}`}
         />
-        {/* <script async src="https://www.googletagmanager.com/gtag/js?id=G-8HYZ3Y4VDB"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-8HYZ3Y4VDB');
-</script> */}
         <Script
           strategy="lazyOnload"
           src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_ANALYTICS}`}
@@ -58,13 +51,13 @@ export default function Document(props) {
 
         <Script id="ga-script" strategy="lazyOnload">
           {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${process.env.GOOGLE_ANALYTICS}', {
-              page_path: window.location.pathname,
-            });
-                `}
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', '${process.env.GOOGLE_ANALYTICS}', {
+                page_path: window.location.pathname,
+              });
+        `}
         </Script>
       </Head>
       <body className="bg-white dark:bg-black text-white dark:text-black">
