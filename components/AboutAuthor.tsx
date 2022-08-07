@@ -33,7 +33,11 @@ export default function Author() {
         </p>
         <p>
           I'm a web developer and computer science tutor. I also rock climb,
-          play wheelchair basketball and brew beer.
+          play{' '}
+          <Link href="/blog/my-experience-playing-wheelchair-basketball">
+            <a>wheelchair basketball</a>
+          </Link>{' '}
+          and brew beer.
         </p>
       </div>
     </div>

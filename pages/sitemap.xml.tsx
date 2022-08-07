@@ -1,5 +1,5 @@
 import { ApolloClient, InMemoryCache } from '@apollo/client';
-import { GET_ALL_SLUGS, GET_INDIVIDUAL_POST } from 'graphql/queries';
+import { GET_ALL_SLUGS } from 'graphql/queries';
 
 const client = new ApolloClient({
   uri: process.env.CMS_HOST,

@@ -30,20 +30,10 @@ export default function Document(props) {
         />
         <meta content="#ffffff" name="theme-color" />
         <meta content="#ffffff" name="msapplication-TileColor" />
-        {/* <meta content="14d2e73487fa6c71" name="yandex-verification" /> */}
-        {/* <meta
-          content="eZSdmzAXlLkKhNJzfgwDqWORghxnJ8qR9_CHdAh5-xw"
-          name="google-site-verification"
-        /> */}
         <meta
           content="max-snippet:-1, max-image-preview:large, max-video-preview:-1"
           name="robots"
         />
-        <script
-          async
-          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_ANALYTICS}`}
-        />
-
         <Script
           strategy="lazyOnload"
           src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_ANALYTICS}`}
@@ -51,12 +41,12 @@ export default function Document(props) {
 
         <Script id="ga-script" strategy="lazyOnload">
           {`
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', '${process.env.GOOGLE_ANALYTICS}', {
-                page_path: window.location.pathname,
-              });
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${process.env.GOOGLE_ANALYTICS}', {
+              page_path: window.location.pathname,
+            });
         `}
         </Script>
       </Head>
