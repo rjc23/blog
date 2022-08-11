@@ -56,7 +56,7 @@ export default function Code({ posts }) {
   );
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const { data } = await client.query({
     query: GET_LATEST_POSTS,
     variables: { type: 'code' }
