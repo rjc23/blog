@@ -56,9 +56,7 @@ export default function Code({ posts }) {
   );
 }
 
-export async function getServerSideProps() {
-  console.log(process.env.CMS_HOST);
-
+export async function getStaticProps() {
   const { data } = await client.query({
     query: GET_LATEST_POSTS,
     variables: { type: 'code' }

@@ -26,19 +26,19 @@ export default function PostPage({ post }: { post: Post }) {
   );
 }
 
-// export async function getStaticPaths() {
-//   const { data } = await client.query({ query: GET_ALL_SLUGS });
-//   const paths = data.blogPosts.data.map((post) => {
-//     return { params: { slug: post.attributes.urlSlug } };
-//   });
+export async function getStaticPaths() {
+  const { data } = await client.query({ query: GET_ALL_SLUGS });
+  const paths = data.blogPosts.data.map((post) => {
+    return { params: { slug: post.attributes.urlSlug } };
+  });
 
-//   return {
-//     paths,
-//     fallback: false
-//   };
-// }
+  return {
+    paths,
+    fallback: false
+  };
+}
 
-export async function getServerSideProps({ params, preview = false }) {
+export async function getStaticProps({ params, preview = false }) {
   const { data } = await client.query({
     query: GET_INDIVIDUAL_POST,
     variables: { slugUrl: params.slug }
