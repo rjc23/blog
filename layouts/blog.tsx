@@ -29,7 +29,7 @@ export default function BlogLayout({
             {children}
           </div>
         </Suspense>
-        <hr className="mt-10 w-full border-1 border-gray-200 dark:border-gray-800 mb-8" />
+        <hr className="mt-16 w-full border-1 border-gray-200 dark:border-gray-800 mb-8" />
         <AboutAuthor />
         <PlayGames />
       </article>
