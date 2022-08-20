@@ -21,10 +21,28 @@ const CustomLink = (props) => {
   return <a target="_blank" rel="noopener noreferrer" {...props} />;
 };
 
+const WatchOnYouTube = (props) => {
+  return (
+    <div className="youtube flex items-center gap-2">
+      <Image
+        src="/youtube.png"
+        alt="YouTube logo"
+        width={30}
+        height={30}
+      ></Image>
+      <a href={props.link}>
+        {props?.text && <span>{props.text}</span>}
+        {!props?.text && <span>Watch this step on YouTube</span>}
+      </a>
+    </div>
+  );
+};
+
 const MDXComponents = {
   a: CustomLink,
   ImageWithTheme,
-  img: NextImage
+  img: NextImage,
+  WatchOnYouTube
 };
 
 export default MDXComponents;

@@ -215,6 +215,10 @@ input[type='email'] {
   font-weight: inherit;
 }
 
+.youtube img {
+    box-shadow: none;
+}
+
 table {
   display: block;
   max-width: fit-content;
