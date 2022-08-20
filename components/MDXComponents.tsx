@@ -32,7 +32,7 @@ const WatchOnYouTube = (props) => {
       ></Image>
       <a href={props.link}>
         {props?.text && <span>{props.text}</span>}
-        {!props?.text && <span>Watch this step on YouTube</span>}
+        {!props?.text && <span>Watch this step</span>}
       </a>
     </div>
   );
