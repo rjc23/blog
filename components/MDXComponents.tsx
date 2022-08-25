@@ -30,7 +30,7 @@ const WatchOnYouTube = (props) => {
         width={30}
         height={30}
       ></Image>
-      <a href={props.link}>
+      <a href={props.link} target="blank" rel="noopener noreferrer">
         {props?.text && <span>{props.text}</span>}
         {!props?.text && <span>Watch this step</span>}
       </a>
