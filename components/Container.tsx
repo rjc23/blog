@@ -40,7 +40,9 @@ export default function Container(props) {
     title: 'Ryan Carmody - Web Developer and Computer Science Tutor',
     description: `Full stack web developer and computer science tutor. `,
     type: 'website',
-    image: '/home.png',
+    image:
+      'https://ryancarmody-blog.s3.amazonaws.com/large_home_9fd803899b.png',
+    tags: 'Next.js, blog, Ryan Carmody',
     ...customMeta
   };
 
