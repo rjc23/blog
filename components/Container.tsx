@@ -40,8 +40,11 @@ export default function Container(props) {
     title: 'Ryan Carmody - Web Developer and Computer Science Tutor',
     description: `Full stack web developer and computer science tutor. `,
     type: 'website',
+    image: '/home.png',
     ...customMeta
   };
+
+  console.log(meta);
 
   return (
     <div className="bg-gray-50 dark:bg-gray-900">
@@ -61,7 +64,9 @@ export default function Container(props) {
         <meta property="og:site_name" content="Ryan Carmody" />
         <meta property="og:description" content={meta.description} />
         <meta property="og:title" content={meta.title} />
+
         <meta property="og:image" content={meta.image} />
+
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@ryancarmody1" />
         <meta name="twitter:title" content={meta.title} />
