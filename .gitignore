@@ -6,5 +6,5 @@ node_modules
 .env
 .sanity
 
-yarn.lock
+
 package-lock.json
