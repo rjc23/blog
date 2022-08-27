@@ -11,7 +11,6 @@ export default function BlogLayout({
   children,
   post
 }: PropsWithChildren<{ post: Post }>) {
-  console.log(post);
   return (
     <Container
       title={`${post.heading} – Ryan Carmody`}

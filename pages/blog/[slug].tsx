@@ -47,8 +47,6 @@ export async function getStaticProps({ params, preview = false }) {
   const attrs = data.blogPosts.data[0].attributes;
   const { html, readingTime } = await mdxToHtml(attrs.content);
 
-  console.log(attrs.tag.data);
-
   return {
     props: {
       post: {
