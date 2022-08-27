@@ -29,9 +29,9 @@ export default function Categories({ tag, posts }) {
       <div className="flex flex-col items-start justify-center max-w-2xl mx-auto mb-16">
         <h1 className="mb-4 text-3xl font-bold tracking-tight text-black md:text-5xl dark:text-white">
           /category/
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
-            {tag}
-          </span>
+          {/* <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600"> */}
+          {tag}
+          {/* </span> */}
         </h1>
         <p className="mb-12">
           Here you can find articles about everything {tag}.
