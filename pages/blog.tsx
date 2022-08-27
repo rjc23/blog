@@ -1,9 +1,4 @@
-import { Suspense, useState } from 'react';
-
 import Container from 'components/Container';
-import BlogPost from 'components/BlogPost';
-import { InferGetStaticPropsType } from 'next';
-import { Post } from 'lib/types';
 import Link from 'next/link';
 
 export default function Blog() {

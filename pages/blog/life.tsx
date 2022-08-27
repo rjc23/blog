@@ -4,6 +4,7 @@ import { GET_LATEST_POSTS } from 'graphql/queries';
 import Link from 'next/link';
 import readingTime from 'reading-time';
 import { Key } from 'react';
+import LatestPosts from 'components/LatestPosts';
 
 const client = new ApolloClient({
   uri: process.env.CMS_HOST,
@@ -13,7 +14,7 @@ const client = new ApolloClient({
 export default function Misc({ posts }) {
   return (
     <Container
-      title="Blog/Code – Ryan Carmody"
+      title="Blog/Life – Ryan Carmody"
       description="Thoughts on the software industry, programming, tech, videography, music, and my personal life."
     >
       <div className="flex flex-col items-start justify-center max-w-2xl mx-auto mb-16">
@@ -26,31 +27,7 @@ export default function Misc({ posts }) {
           apply for etc.
         </p>
         <h2 className="mb-4">Latest articles</h2>
-        <div className="flex flex-col-reverse">
-          {posts.map((val: any, i: Key) => {
-            const options: any = {
-              year: 'numeric',
-              month: 'long',
-              day: 'numeric'
-            };
-            const createdAt = new Date(
-              val.attributes.createdAt
-            ).toLocaleDateString([], options);
-            return (
-              <div className="mb-8" key={i}>
-                <Link href={'/blog/' + val.attributes.urlSlug} className="mb-8">
-                  <a>
-                    <h3>{val.attributes.heading}</h3>
-                    <span className="text-sm text-green-700 dark:text-green-300">
-                      {readingTime(val.attributes.content).text} - {createdAt}
-                    </span>
-                    <p>{val.attributes.description}</p>
-                  </a>
-                </Link>
-              </div>
-            );
-          })}
-        </div>
+        <LatestPosts posts={posts} />
       </div>
     </Container>
   );

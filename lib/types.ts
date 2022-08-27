@@ -9,4 +9,5 @@ export type Post = {
   description: string;
   socialImage: string;
   readingTime: string;
+  tag: any;
 };
