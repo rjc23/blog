@@ -28,6 +28,7 @@ export default function LatestPosts({ posts }) {
                     layout="fill"
                     alt={val.attributes.socialImage?.data?.attributes.caption}
                     className="image rounded-tl-lg rounded-tr-lg"
+                    quality={1}
                     priority
                   ></Image>
                 </div>

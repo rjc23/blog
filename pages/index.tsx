@@ -19,8 +19,8 @@ export default function Home() {
                 Web Developer and Computer Science Tutor
               </p>
               <p className="text-gray-600 dark:text-gray-400 mb-16">
-                I don't like the 9-5 grind. Trying to make it on my own. Let's
-                see what happens.{' '}
+                Currently working at The University of Adelade and working on{' '}
+                <Link href="/blog/personal-projects">these projects.</Link>{' '}
               </p>
             </div>
             <div className="w-[80px] sm:w-[200px] relative mb-8 sm:mb-0 ">
