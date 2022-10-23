@@ -23,19 +23,18 @@ export default function About() {
         </p>
         <p className="text-black dark:text-white mb-4">
           For about 2 years, I worked full-time for a local company as a web
-          developer, mainly using Angular 2+. I love coding but hate working in
-          an office for 40 hours a week. I was pretty unhappy, it felt like I
-          was using up all of my problem-solving abilities and creativity at
-          work and my love for coding and creating was fading.
+          developer, mainly using Angular 2+. I really enjoyed working at this
+          company but was ready for something new.
         </p>
         <p className="text-black dark:text-white mb-6">
-          In early 2022, I quit my job and took a job tutoring at my local
+          In early 2022, I left my job and took a job tutoring at my local
           university. I can now say, I seriously LOVE tutoring. I really enjoy
           building meaningful relationships with students and seeing them
           develop their coding skills. Also, since I started tutoring, I have
-          really regained my passion for coding and creating things. I have
-          started building things again and am learning new tech such as
-          next.js.
+          started working on many more{' '}
+          <Link href="blog/personal-projects">personal coding projects.</Link>{' '}
+          This has enabled me to learn new skills, such as Next.js, Web
+          Scraping, Twitter API and much more.
         </p>
         <h2 className="text-black dark:text-white mb-4">Get in contact</h2>
         <ul>

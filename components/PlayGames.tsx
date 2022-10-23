@@ -29,6 +29,17 @@ export default function PlayGames() {
       <div className="flex gap-3 flex-col sm:flex-row sm:gap-12">
         <div className="mt-6 w-8/12 sm:w-3/12 ">
           <Game
+            link="https://wheretaken.com"
+            alt="WhereTaken"
+            imgSrc="/wheretaken.png"
+          ></Game>
+          <div>
+            <h4>WhereTaken</h4>
+            <p>Guess the country from a photo.</p>
+          </div>
+        </div>
+        <div className="mt-6 w-8/12 sm:w-3/12 ">
+          <Game
             link="https://playretrosnake.com"
             alt="Retro Snake Game"
             imgSrc="/snake.jpeg"
