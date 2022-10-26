@@ -20,7 +20,7 @@ export default function Home() {
               </p>
               <p className="text-gray-600 dark:text-gray-400 mb-16">
                 Currently working at The University of Adelaide and chipping
-                away on{' '}
+                away at{' '}
                 <Link href="/blog/personal-projects">these projects.</Link>{' '}
               </p>
             </div>
