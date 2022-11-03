@@ -1,8 +1,8 @@
 import { gql } from '@apollo/client';
 
 const GET_ALL_SLUGS = gql`
-  query(pagination: { limit: 1000 }) {
-    blogPosts {
+  query {
+    blogPosts(pagination: { limit: 1000 }) {
       data {
         attributes {
           urlSlug
@@ -32,8 +32,8 @@ const GET_ALL_TAGS = gql`
 `;
 
 const GET_POSTS_FROM_TAG = gql`
-  query ($tag: String!, pagination: { limit: 100 }) {
-    tags(filters: { tagName: { eq: $tag } }) {
+  query ($tag: String!) {
+    tags(filters: { tagName: { eq: $tag } }, pagination: { limit: 1000 }) {
       data {
         attributes {
           tagName
@@ -69,7 +69,7 @@ const GET_POSTS_FROM_TAG = gql`
 `;
 
 const GET_INDIVIDUAL_POST = gql`
-  query ($slugUrl: String!, pagination: { limit: 100 }) {
+  query ($slugUrl: String!) {
     blogPosts(filters: { urlSlug: { eq: $slugUrl } }) {
       data {
         attributes {
@@ -100,8 +100,8 @@ const GET_INDIVIDUAL_POST = gql`
 `;
 
 const GET_LATEST_POSTS = gql`
-  query ($type: String!, pagination: { limit: 100 }) {
-    blogPosts(filters: { type: { eq: $type } }) {
+  query ($type: String!) {
+    blogPosts(filters: { type: { eq: $type } }, pagination: { limit: 1000 }) {
       data {
         attributes {
           heading
