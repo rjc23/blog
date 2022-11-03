@@ -33,6 +33,8 @@ export async function getStaticPaths() {
     return { params: { slug: post.attributes.urlSlug } };
   });
 
+  console.log(paths);
+
   return {
     paths,
     fallback: false
@@ -44,8 +46,6 @@ export async function getStaticProps({ params, preview = false }) {
     query: GET_INDIVIDUAL_POST,
     variables: { slugUrl: params.slug }
   });
-
-  console.log(data.blogPosts.data);
 
   const attrs = data.blogPosts.data[0].attributes;
   const { html, readingTime } = await mdxToHtml(attrs.content);

@@ -46,7 +46,6 @@ export async function getStaticProps() {
     query: GET_LATEST_POSTS,
     variables: { type: 'code' }
   });
-  console.log(data);
   return {
     props: {
       posts: data.blogPosts.data
