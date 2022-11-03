@@ -33,7 +33,7 @@ const GET_ALL_TAGS = gql`
 
 const GET_POSTS_FROM_TAG = gql`
   query ($tag: String!) {
-    tags(filters: { tagName: { eq: $tag } }, pagination: { limit: 1000 }) {
+    tags(filters: { tagName: { eq: $tag } }, pagination: { limit: 100 }) {
       data {
         attributes {
           tagName
@@ -101,7 +101,7 @@ const GET_INDIVIDUAL_POST = gql`
 
 const GET_LATEST_POSTS = gql`
   query ($type: String!) {
-    blogPosts(filters: { type: { eq: $type } }, pagination: { limit: 1000 }) {
+    blogPosts(filters: { type: { eq: $type } }, pagination: { limit: 100 }) {
       data {
         attributes {
           heading
