@@ -2,7 +2,7 @@ import { gql } from '@apollo/client';
 
 const GET_ALL_SLUGS = gql`
   query {
-    blogPosts(pagination: { limit: 1000 }) {
+    blogPosts {
       data {
         attributes {
           urlSlug
@@ -14,7 +14,7 @@ const GET_ALL_SLUGS = gql`
 
 const GET_ALL_TAGS = gql`
   query {
-    tags(pagination: { limit: 1000 }) {
+    tags {
       data {
         attributes {
           tagName
@@ -33,7 +33,7 @@ const GET_ALL_TAGS = gql`
 
 const GET_POSTS_FROM_TAG = gql`
   query ($tag: String!) {
-    tags(filters: { tagName: { eq: $tag } }, pagination: { limit: 100 }) {
+    tags(filters: { tagName: { eq: $tag } }) {
       data {
         attributes {
           tagName
@@ -101,7 +101,7 @@ const GET_INDIVIDUAL_POST = gql`
 
 const GET_LATEST_POSTS = gql`
   query ($type: String!) {
-    blogPosts(filters: { type: { eq: $type } }, pagination: { limit: 100 }) {
+    blogPosts(filters: { type: { eq: $type } }) {
       data {
         attributes {
           heading
