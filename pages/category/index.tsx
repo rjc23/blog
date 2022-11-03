@@ -29,8 +29,11 @@ export default function Code({ tags }) {
           {tags.map((val, i) => {
             return (
               <div key={i} className="">
-                <Link href={'category/' + val.attributes.tagName}>
-                  <a className="relative">
+                <Link
+                  legacyBehavior={true}
+                  href={'category/' + val.attributes.tagName}
+                >
+                  <span className="relative">
                     <Image
                       src={val.attributes.image.data.attributes.url}
                       width={672}
@@ -38,7 +41,7 @@ export default function Code({ tags }) {
                       alt="image"
                       className="mt-1 rounded-md !bg-white !border-solid !border-1 !border-gray-200"
                     ></Image>
-                  </a>
+                  </span>
                 </Link>
               </div>
             );

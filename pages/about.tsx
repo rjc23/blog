@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import Image from 'next/future/image';
+import Image from 'next/image';
 
 import Container from 'components/Container';
 
@@ -32,7 +32,9 @@ export default function About() {
           building meaningful relationships with students and seeing them
           develop their coding skills. Also, since I started tutoring, I have
           started working on many more{' '}
-          <Link href="blog/personal-projects">personal coding projects.</Link>{' '}
+          <Link legacyBehavior={true} href="blog/personal-projects">
+            personal coding projects.
+          </Link>{' '}
           This has enabled me to learn new skills, such as Next.js, Web
           Scraping, Twitter API and much more.
         </p>

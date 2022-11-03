@@ -1,5 +1,5 @@
 import { Suspense } from 'react';
-import Image from 'next/future/image';
+import Image from 'next/image';
 
 import Container from '../components/Container';
 import Link from 'next/link';
@@ -21,7 +21,9 @@ export default function Home() {
               <p className="text-gray-600 dark:text-gray-400 mb-16">
                 Currently working at The University of Adelaide and chipping
                 away at{' '}
-                <Link href="/blog/personal-projects">these projects.</Link>{' '}
+                <Link legacyBehavior={true} href="/blog/personal-projects">
+                  these projects.
+                </Link>{' '}
               </p>
             </div>
             <div className="w-[80px] sm:w-[200px] relative mb-8 sm:mb-0 ">

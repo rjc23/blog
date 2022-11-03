@@ -9,10 +9,9 @@ export default function BlogPost({
   title: string;
   excerpt: string;
 }) {
-
   return (
-    <Link href={`/blog/${slug}`}>
-      <a className="w-full">
+    <Link legacyBehavior={true} href={`/blog/${slug}`}>
+      <span className="w-full">
         <div className="w-full mb-8">
           <div className="flex flex-col justify-between md:flex-row">
             <h4 className="w-full mb-2 text-lg font-medium text-gray-900 md:text-xl dark:text-gray-100">
@@ -21,7 +20,7 @@ export default function BlogPost({
           </div>
           <p className="text-gray-600 dark:text-gray-400">{excerpt}</p>
         </div>
-      </a>
+      </span>
     </Link>
   );
 }

@@ -25,10 +25,14 @@ export default function BlogLayout({
         <div className="mb-4">
           {post.tag.map((oneTag, i) => {
             return (
-              <Link href={`/category/${oneTag.attributes.tagName}`} key={i}>
-                <a className="text-lg mr-2 bg-gray-200 dark:bg-gray-600 p-px pr-1 pl-1 rounded-sm">
+              <Link
+                legacyBehavior={true}
+                href={`/category/${oneTag.attributes.tagName}`}
+                key={i}
+              >
+                <span className="text-lg mr-2 bg-gray-200 dark:bg-gray-600 p-px pr-1 pl-1 rounded-sm">
                   #{oneTag.attributes.tagName}
-                </a>
+                </span>
               </Link>
             );
           })}

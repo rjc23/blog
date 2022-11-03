@@ -29,8 +29,8 @@ export default function Code({ posts }) {
           </p>
           <p>
             You can search{' '}
-            <Link href={'/category'}>
-              <a>by category.</a>
+            <Link legacyBehavior={true} href={'/category'}>
+              <span>by cspantegory.</span>
             </Link>
           </p>
         </div>
@@ -46,7 +46,7 @@ export async function getStaticProps() {
     query: GET_LATEST_POSTS,
     variables: { type: 'code' }
   });
-
+  console.log(data);
   return {
     props: {
       posts: data.blogPosts.data

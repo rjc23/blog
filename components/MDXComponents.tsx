@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import ImageWithTheme from 'components/ImageWithTheme';
-import Image from 'next/future/image';
+import Image from 'next/image';
 
 const NextImage = (props) => {
   return (
@@ -20,8 +20,8 @@ const CustomLink = (props) => {
 
   if (isInternalLink) {
     return (
-      <Link href={href}>
-        <a {...props}>{props.children}</a>
+      <Link legacyBehavior={true} href={href}>
+        <span {...props}>{props.children}</span>
       </Link>
     );
   }

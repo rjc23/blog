@@ -5,6 +5,7 @@ import { mdxToHtml } from 'lib/mdx';
 import { Post } from 'lib/types';
 import { ApolloClient, InMemoryCache } from '@apollo/client';
 import { GET_ALL_SLUGS, GET_INDIVIDUAL_POST } from 'graphql/queries';
+import BlogPost from '../../components/BlogPost';
 
 const client = new ApolloClient({
   uri: process.env.CMS_HOST,
@@ -43,6 +44,8 @@ export async function getStaticProps({ params, preview = false }) {
     query: GET_INDIVIDUAL_POST,
     variables: { slugUrl: params.slug }
   });
+
+  console.log(data.blogPosts.data);
 
   const attrs = data.blogPosts.data[0].attributes;
   const { html, readingTime } = await mdxToHtml(attrs.content);

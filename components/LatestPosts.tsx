@@ -20,8 +20,12 @@ export default function LatestPosts({ posts }) {
             className="bg-white shadow-md rounded-lg dark:bg-gray-800"
             key={i}
           >
-            <Link href={'/blog/' + val.attributes.urlSlug}>
-              <a>
+            <Link
+              legacyBehavior={true}
+              href={'/blog/' + val.attributes.urlSlug}
+              as={`/post/${val.attributes.urlSlug}`}
+            >
+              <span>
                 <div className="imageContainer mb-2">
                   <Image
                     src={val.attributes.socialImage?.data?.attributes.url}
@@ -32,24 +36,31 @@ export default function LatestPosts({ posts }) {
                     priority
                   ></Image>
                 </div>
-              </a>
+              </span>
             </Link>
             <div className="p-4 pb-8">
-              <Link href={'/blog/' + val.attributes.urlSlug}>
-                <a>
+              <Link
+                legacyBehavior={true}
+                href={'/blog/' + val.attributes.urlSlug}
+              >
+                <span>
                   <div className="text-sm text-green-700 dark:text-green-300">
                     {readingTime(val.attributes.content).text} - {createdAt}
                   </div>
                   <h3 className="mb-3">{val.attributes.heading}</h3>
-                </a>
+                </span>
               </Link>
               <div>
                 {val.attributes.tag?.data.map((tag, i) => {
                   return (
-                    <Link href={`/category/${tag.attributes.tagName}`} key={i}>
-                      <a className="mr-2 bg-gray-200 dark:bg-gray-600 p-px pr-1 pl-1 rounded-sm">
+                    <Link
+                      legacyBehavior={true}
+                      href={`/category/${tag.attributes.tagName}`}
+                      key={i}
+                    >
+                      <span className="mr-2 bg-gray-200 dark:bg-gray-600 p-px pr-1 pl-1 rounded-sm">
                         #{tag.attributes.tagName}
-                      </a>
+                      </span>
                     </Link>
                   );
                 })}

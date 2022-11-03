@@ -53,24 +53,24 @@ export default function MobileMenu() {
             className="border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
             style={{ transitionDelay: '150ms' }}
           >
-            <Link href="/">
-              <a className="flex w-auto pb-4">Home</a>
+            <Link legacyBehavior={true} href="/">
+              <span className="flex w-auto pb-4">Home</span>
             </Link>
           </li>
           <li
             className="border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
             style={{ transitionDelay: '150ms' }}
           >
-            <Link href="/about">
-              <a className="flex w-auto pb-4">About</a>
+            <Link legacyBehavior={true} href="/about">
+              <span className="flex w-auto pb-4">About</span>
             </Link>
           </li>
           <li
             className="border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
             style={{ transitionDelay: '250ms' }}
           >
-            <Link href="/blog">
-              <a className="flex w-auto pb-4">Blog</a>
+            <Link legacyBehavior={true} href="/blog">
+              <span className="flex w-auto pb-4">Blog</span>
             </Link>
           </li>
         </ul>
