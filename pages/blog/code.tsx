@@ -30,7 +30,7 @@ export default function Code({ posts }) {
           <p>
             You can search{' '}
             <Link legacyBehavior={true} href={'/category'}>
-              <span>by cspantegory.</span>
+              <span>by category.</span>
             </Link>
           </p>
         </div>
